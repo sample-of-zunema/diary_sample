@@ -33,6 +33,8 @@
     <form th:action="@{/diary/add}" method="post">
         <input type="text" name="newdiary" class="form-control mb-2">
         <button type="submit" class="btn btn-primary">投稿する</button>
+        <div th:if="${#fields.hasErrors('newDiaryForm.newdiary')}" th:errors="*{newDiaryForm.newdiary}"
+            class="alert alert-danger">投稿エラー</div>
     </form>
 </body>
 

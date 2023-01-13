@@ -1,5 +1,8 @@
 package com.example.demo_sample;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +29,15 @@ public class DiaryController {
     @PostMapping("delete")
     public String delete(@RequestParam Integer id) {
         diaryRepository.deleteById(id);
+        return "redirect:/diary/summary";
+    }
+
+    //日記の新規登録
+    @PostMapping("add")
+    public String add(@RequestParam String newdiary) {
+        //ChronoUnit.SECONDSで秒以下を切り捨て
+        Diary diary = new Diary(newdiary, LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
+        diaryRepository.save(diary);
         return "redirect:/diary/summary";
     }
 }

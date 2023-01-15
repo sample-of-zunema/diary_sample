@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-// @Table(name = "diary") //指定しないと生成されるテーブルはクラス名と同じdiary
 public class Diary {
     public Diary(String bodytext, LocalDateTime createDatetime) {
         this.bodytext = bodytext;

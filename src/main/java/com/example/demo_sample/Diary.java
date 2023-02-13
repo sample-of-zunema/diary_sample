@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 public class Diary {
+
     public Diary(String bodytext, LocalDateTime createDatetime) {
         this.bodytext = bodytext;
         this.createDatetime = createDatetime;

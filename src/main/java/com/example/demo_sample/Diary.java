@@ -31,4 +31,5 @@ public class Diary {
     // 投稿日時
     @Column(name = "create_datetime", nullable = false)
     private LocalDateTime createDatetime;
+
 }

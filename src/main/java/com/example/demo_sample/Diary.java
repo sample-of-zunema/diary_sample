@@ -28,6 +28,7 @@ public class Diary {
     private Integer id;
     @Column(nullable = false)
     private String bodytext;
+
     // 投稿日時
     @Column(name = "create_datetime", nullable = false)
     private LocalDateTime createDatetime;
